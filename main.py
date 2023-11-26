@@ -1,15 +1,28 @@
-class Vector:
+class Students:
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+    
     def __str__(self):
-        return f"({self.x}, {self.y})"
+        return f"Name: {self.name} and Marks : {self.marks}"
+    
+    @classmethod
+    def newConstructor(cls, studentList):
+        studentObjList = []
+        for student in studentList:
+            name, marks = student
+            studentObjList.append(cls(name, marks))
+            cls.display()
+        return studentObjList
 
-    def __add__(self, other):
-        return (self.x + other.x, self.y + other.y)
+    @staticmethod
+    def display():
+        print("The student is succesfully added")
 
-v1 = Vector(10, 20)
-v2 = Vector(30, 40)
-print(v1 + v2)
+
+studentList = [["Suresh", 80], ["Ramesh", 85], ["Arjun", 90]]
+objList = Students.newConstructor(studentList)
+
+for obj in objList:
+    print(obj)
