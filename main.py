@@ -1,21 +1,8 @@
-class Student:
+class Vector:
 
-    # constructor
-    def __init__(self, n, marks):
-        self.name = n
-        self.marks = marks
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    def display(self):
-        print(f"Name : {self.name}, and Marks: {self.marks}")
-
-student1 = Student("Suresh", 90)
-student1.display()
-
-student2 = Student("Ramesh", 80)
-student2.display()
-
-'''
-Output:
-Name : Suresh, and Marks: 90
-Name : Ramesh, and Marks: 80
-'''
+v1 = Vector(10, 20)
+print(v1)

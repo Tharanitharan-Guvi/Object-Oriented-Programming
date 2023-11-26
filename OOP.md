@@ -85,3 +85,32 @@ Name : Suresh, and Marks: 90
 Name : Ramesh, and Marks: 80
 '''
 ```
+
+## Destructor
+It is called when an object is to be destroyed
+
+```python
+
+class Student:
+
+    # constructor method
+    def __init__(self, n, marks):
+        self.name = n
+        self.marks = marks
+
+    def display(self):
+        print(f"Name : {self.name}, and Marks: {self.marks}")
+    
+    # Destructor
+    def __del__(self):
+        print(f"Student : {self.name} is removed from the system")
+
+student1 = Student("Suresh", 90)
+student1.display()
+del student1
+student1.display()
+```
+
+
+## Dunder Methods
+Dunder methods are also known as magic methods or special methods and they are used to perform some special behaviors.
