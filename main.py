@@ -1,16 +1,18 @@
-class Students:
+class ABC:
     def __init__(self, name, marks):
         self.name = name
         self.marks = marks
 
-    def display(self):
-        print("Display 1")
-        self.__display()
-    
-    def __display(self):
-        print("Display 2")
+    def __str__(self):
+        return f"Name: {self.name} and Marks: {self.marks}"
 
-s1 = Students("Suresh", 80)
+    def display(self):
+        print(f"Name: {self.name} and Marks: {self.marks}")
+
+class DEF(ABC):
+    def display(self):
+        print(f"Marks: {self.marks} and Name: {self.name}")
+
+
+s1 = DEF("Suresh", 80)
 s1.display()
-s1._Students__display()
-s1.__display()

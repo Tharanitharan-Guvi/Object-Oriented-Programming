@@ -233,3 +233,88 @@ Traceback (most recent call last):
 AttributeError: 'Students' object has no attribute '__display'. Did you mean: 'display'?
 '''
 ```
+
+### Polymorphism
+It is the condition of occurrence in different forms.
+
+### Inheritance
+
+Inheritance allows us to create a new class from an existing class. We are going to derive all the methods and attributes from the parent/super class to the child/sub class.
+
+Syntax:
+
+```python
+class Superclass:
+    pass
+
+class Subclass(Superclass):
+    pass
+```
+
+Example:
+
+```python
+
+class ABC:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def __str__(self):
+        return f"Name: {self.name} and Marks: {self.marks}"
+
+    def display(self):
+        print(f"Name: {self.name} and Marks: {self.marks}")
+
+class DEF(ABC):
+    def display(self):
+        super().display()
+
+s1 = DEF("Suresh", 80)
+s1.display()
+```
+
+### Types of Inheritance:
+
+1. Simple Inheritance:
+
+```python
+
+class Parent:
+    pass
+
+class Child(Parent):
+    pass
+
+```
+
+2. Multilevel Inheritance:
+
+```python
+class Grandfather:
+    pass
+
+class father(Grandfather):
+    pass
+
+class son(father):
+    pass
+```
+
+3. Multiple Inheritance:
+
+```python
+
+class A:
+    pass
+
+class B:
+    pass
+
+class C(A, B):
+    pass
+```
+
+#### Uses of Inheritance:
+1. This allows for code reusability.
+2. This allows for cleaner code and easier to maintain.
