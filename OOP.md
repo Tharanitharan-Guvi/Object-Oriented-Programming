@@ -186,5 +186,50 @@ Name: Suresh and Marks : 80
 Name: Ramesh and Marks : 85
 Name: Arjun and Marks : 90
 '''
+```
 
+## Four Pillars of OOP
+
+### Encapsulation
+
+It describes the idea of wrapping data and the methods within one unit.
+
+### Abstraction
+
+It is the process of hiding the internal details of an application from the outer world
+
+#### Private Methods
+
+The methods which are only accessed within the class and cannot be accessed outside the class. But python doesn't support true private methods. The private method can be acessed by this '_NameOfTheClass__methodName'.
+
+```python
+
+class Students:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def display(self):
+        print("Display 1")
+        self.__display()
+    
+    def __display(self):
+        print("Display 2")
+
+s1 = Students("Suresh", 80)
+s1.display()
+s1._Students__display()
+s1.__display()
+
+
+'''
+Display 1
+Display 2
+Display 2
+Traceback (most recent call last):
+  File "E:\Guvi\PAT Sessions\OOP\main.py", line 16, in <module>
+    s1.__display()
+    ^^^^^^^^^^^^
+AttributeError: 'Students' object has no attribute '__display'. Did you mean: 'display'?
+'''
 ```
